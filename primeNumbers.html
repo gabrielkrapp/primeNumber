@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Numbers</title>
+</head>
+<body>
+
+    <script>
+        const main = function primeNumber() {
+            let prime = new Array(1000);
+                for(let i = 1; i <= 1000; i++)
+                 prime[i] = true;
+
+                for (let p = 2; p * p <= 1000; p++) {
+            
+                    if (prime[p] == true) {
+            
+                        for (let i = p * 2; i <= 1000; i += p)
+                            prime[i] = false;
+                    }
+                }
+            
+                let sum = 0;
+                for (let i = 2; i <= 1000; i++)
+                    if (prime[i])
+                        sum += i;
+                return sum;
+        }
+
+    </script>
+    
+</body>
+</html>
